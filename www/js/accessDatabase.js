@@ -7,8 +7,8 @@ $( document ).ready( function() {
 
 } );
 function refresh() {
-  if(sessionStorage.getItem('username') != null){
-    alert(sessionStorage.getItem('username') + ' was logged in');
+  if(localStorage.getItem('username') != null){
+    alert(localStorage.getItem('username') + ' was logged in');
   }
 }
 
@@ -25,7 +25,7 @@ function login() {
     };
     $.post(url + "/login", dataToBeSent, function(data, textStatus) {
       alert(data.message);
-      sessionStorage.setItem('username', data.result.username);
+      localStorage.setItem('username', data.result.username);
     }, "json");
     
     /*
