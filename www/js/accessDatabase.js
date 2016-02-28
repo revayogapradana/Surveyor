@@ -25,7 +25,7 @@ function login() {
     };
     $.post(url + "/login", dataToBeSent, function(data, textStatus) {
       alert(data.message);
-      //sessionStorage.setItem('username', data.result.username);
+      sessionStorage.setItem('username', data.result.username);
     }, "json");
     
     /*
