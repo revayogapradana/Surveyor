@@ -2,29 +2,29 @@
 <html lang="en">
   <head>
     <script src="js/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="js/per_page/info_kapal.js"></script>
+    <script type="text/javascript" src="js/per_page/vessel_crew.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css" >
   </head>
   <body>
     <table width="100%" height="100%">
       <tr class="header">
-        <td align="left"><a href="select_kapal.html" title="Pilih Kapal">Back</a></td>
+        <td align="left"><a href="info_kapal.html" title="Tampilkan Data Kapal">Back</a></td>
         <td align="center">Input Data Survey</td>
         <td align="right"><a href="#" onclick="logout()">Logout</a></td>
       </tr>
       <tr>
         <td colspan="3">
-          <div id="detail_kapal" class="fullwidth"></div>
+          <div id="vessel_crew" class="fullwidth"></div>
         </td>
       </tr>
       <tr>
         <td colspan="3">
-          <input type="submit" class="fullwidth" value="Vessel Crew" onclick="goToVesselCrew()">
+          <input type="submit" class="fullwidth" value="Survey List" onclick="goToSurveyList()">
         </td>
       </tr>
     </table>
   </body>
   <script type="text/javascript">
-    getKapal();
+    getVesselCrew();
   </script>
 </html>
