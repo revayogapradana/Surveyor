@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/info_kapal.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%">
+      <tr class="header">
+        <td align="left"><a href="select_kapal.html">Pilih Kapal</a></td>
+        <td align="center">Input Data Survey</td>
+        <td align="right"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div id="detail_kapal" class="fullwidth"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="submit" class="fullwidth" value="Vessel Crew" onclick="goToVesselCrew()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    getKapal();
+  </script>
+</html>

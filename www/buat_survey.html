@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/buat_survey.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%">
+      <tr class="header">
+        <td align="left"><a href="select_kapal.html">Pilih Kapal</a></td>
+        <td align="center">Input Data Survey</td>
+        <td align="right"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td>
+          Tanggal Survey
+        </td>
+        <td colspan="2" align="right">
+          <table width="100%">
+            <tr>
+              <td width="33%"><div id="tgl" class="fullwidth"></div></td>
+              <td width="33%"><div id="bln" class="fullwidth"></div></td>
+              <td width="33%"><div id="thn" class="fullwidth"></div></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Company
+        </td>
+        <td colspan="2" align="right">
+          <input type="text" class="fullwidth" id="company"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Surveyor
+        </td>
+        <td colspan="2" align="right">
+          <input type="text" class="fullwidth" id="surveyor"></input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="submit" class="fullwidth" value="Ok" onclick="submitSurvey()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    generateDate();
+  </script>
+</html>
