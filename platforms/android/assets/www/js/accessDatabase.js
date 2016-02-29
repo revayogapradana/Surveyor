@@ -16,16 +16,20 @@ function refresh() {
 
 /* fungsi login and logout */
 function login() {
-	//console.log("login");
- 	if ( $('#username').val() != "" && $('#password').val() != "" ) {
+  //console.log("login");
+  if ( $('#username').val() != "" && $('#password').val() != "" ) {
     //console.log("user / pass ada");
     var dataToBeSent = {
       'username' : $('#username').val(),
       'password' : $('#password').val()
     };
     $.post(url + "/login", dataToBeSent, function(data, textStatus) {
-      alert(data.message);
-      localStorage.setItem('username', data.result.username);
+      if(data.message == 'failed'){
+        alert('Username / Password Anda salah!');
+      } else {
+        alert('Welcome ' + data.result.username);
+        localStorage.setItem('username', data.result.username);
+      }
     }, "json");
     
     /*
@@ -37,25 +41,41 @@ function login() {
     */
   }
   else {
-    //console.log("user / pass kosong");
-    //$('#login-emptyfield').popup("open");
+    alert('username dan password harus terisi!');
   }
 }
 function logout() {
-
+  //localStorage.removeItem('item');
+  localStorage.clear();
 }
 function getListKapal() {
+  var selbox = '<select class="fullwidth" name="id_kapal">';
+
   $.getJSON( url + "/kapal", {
   } ).done( function( res ) {
     //alert(result.result);
     $.each( res.result, function( i, item ) {
-      var str = '';
-        $.each( this, function( j, item2 ) {
-          str += j + ': ' + item2 + ', ';
-        } );
-      alert(str);
+      var count = 0;
+
+      $.each( this, function( j, item2 ) {
+        if(count == 0)
+          selbox += '<option value="' + item2 + '">';
+        else 
+          selbox += item2 + '</option>';
+        count++;
+        //alert(selbox);
+      } );
+
     } );
-  } );
+    selbox += '</select>';
+    //alert(selbox);
+    $('#list_kapal').html("");
+    $(selbox).appendTo('#list_kapal');
+  });
+}
+function selectKapal() {
+  var id_kapal = $('#id_kapal').val();
+  localStorage.setItem('id_kapal', id_kapal);
 }
 function getKapal() {
   var id = $('#id_kapal').val();
@@ -143,4 +163,7 @@ function getDocuments() {
     str += '\n';
     alert(str);
   } );
+}
+function selectKapal() {
+  // body...
 }
