@@ -1,0 +1,2 @@
+http://ngcordova.com/docs/plugins/camera/
+https://github.com/apache/cordova-plugin-camera
