@@ -29,13 +29,13 @@ function goToHull() {
 }
 
 function goToMachinery() {
-  window.location.href = "survey_list.html";
+  window.location.href = "menu_machinery.html";
 }
 
 function goToOutFitting() {
-  window.location.href = "survey_list.html";
+  window.location.href = "menu_outfitting.html";
 }
 
 function goToNavigations() {
-  window.location.href = "survey_list.html";
+  window.location.href = "menu_navigations.html";
 }
