@@ -35,10 +35,15 @@ function getKapal() {
 
 function submitSurvey() {
 
+  localStorage.setItem('date',$('#bln_survey').val() + '/' + $('#tgl_survey').val() + '/' + $('#thn_survey').val());
+  localStorage.setItem('company',$('#company').val());
+  localStorage.setItem('surveyor',$('#surveyor').val());
+
+
   var dataToBeSent = {
-      'date' : $('#bln_survey').val() + '/' + $('#tgl_survey').val() + '/' + $('#thn_survey').val(),
-      'company' : $('#company').val(),
-      'surveyor' : $('#surveyor').val(),
+      'date' : localStorage.getItem('date'),
+      'company' : localStorage.getItem('company'),
+      'surveyor' : localStorage.getItem('surveyor'),
       'username' : localStorage.getItem('username'),
       'vessel_imo' : localStorage.getItem('id_kapal')
   };
@@ -48,7 +53,8 @@ function submitSurvey() {
         alert('Ada kesalahan pengiriman data');
       } else {
         alert('Data survey berhasil dimasukkan');
-        //localStorage.setItem('id_survey',data.result.id_survey);
+        localStorage.setItem('id_survey',data.id_survey);
+        //alert(data.id_survey);
         window.location.href = "info_kapal.html";
       }
     }, "json");

@@ -27,8 +27,24 @@ function getKapal() {
     var str = '<table width="100%">';
     $.each( res.result, function( j, item2 ) {
       str += '<tr>';
-      str += '<td width="50%">' + j + '</td><td>' + item2 + '</td>';
+      str += '<td width="50%">' + j + '</td><td width="50%">' + item2 + '</td>';
       str += '</tr>';
+
+      localStorage.getItem('company');
+      localStorage.getItem('surveyor');
+
+      str += '<tr>';
+      str += '<td width="50%">Date of Survey</td><td width="50%">' + localStorage.getItem('date'); + '</td>';
+      str += '</tr>';
+
+      str += '<tr>';
+      str += '<td width="50%">Survey of Company</td><td width="50%">' + localStorage.getItem('company'); + '</td>';
+      str += '</tr>';
+
+      str += '<tr>';
+      str += '<td width="50%">Name of Surveyor</td><td width="50%">' + localStorage.getItem('surveyor'); + '</td>';
+      str += '</tr>';
+
     } );
     str += '</table>';
     $('#detail_kapal').html("");

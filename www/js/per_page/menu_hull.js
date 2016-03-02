@@ -20,22 +20,7 @@ function logout() {
   window.location.href = "index.html";
 }
 
-function goToCOR() {
-  window.location.href = "cor.html";
-}
-
-function goToHull() {
-  window.location.href = "menu_hull.html";
-}
-
-function goToMachinery() {
-  window.location.href = "survey_list.html";
-}
-
-function goToOutFitting() {
-  window.location.href = "survey_list.html";
-}
-
-function goToNavigations() {
-  window.location.href = "survey_list.html";
+function next(id) {
+  localStorage.setItem('hull_id',id);
+  window.location.href = "menu_hull_sub.html";
 }
