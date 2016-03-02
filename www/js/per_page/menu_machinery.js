@@ -20,34 +20,14 @@ function logout() {
   window.location.href = "index.html";
 }
 
-function getHull() {
-  var id = localStorage.getItem('hull_id');
-  $.getJSON( url + "/hull", {} ).done( function( res ) {
-    //alert(result.result);
-    var count = 1;
-    $.each( res.result, function( i, item ) {
-      //alert(count + ' ' + id);
-      if(count == id){
-        var countItem = 0;
-        $.each( this, function( j, item2 ) {
-          if(countItem == 1)
-            $('#nama_hull').html(item2 + ' :');
-          countItem++;
-          //alert(selbox);
-        } );
-        return false;
-      }
-      count++;
-    } );
-  });
-  
-  var selbox = '<select class="fullwidth" id="hull_item_id">';
+function getData() {
+  var selbox = '<select class="fullwidth" id="item_id">';
 
-  $.getJSON( url + "/hull/" + id, {
+  $.getJSON( url + "/machine", {
   } ).done( function( res ) {
     //alert(result.result);
     $.each( res.result, function( i, item ) {
-      var count = 0;
+      var count = 1;
       var id;
       var nama;
       $.each( this, function( j, item2 ) {
@@ -62,13 +42,14 @@ function getHull() {
     } );
     selbox += '</select>';
     //alert(selbox);
-    $('#list_hull').html("");
-    $(selbox).appendTo('#list_hull');
+    $('#list_item').html("");
+    $(selbox).appendTo('#list_item');
   });
 }
 
-function selectHullItem() {
-  var hull_item_id = $('#hull_item_id').val();
-  localStorage.setItem('hull_item_id', hull_item_id);
-  window.location.href = "form_hull_item.html";
+function selectItem() {
+  var id = $('#item_id').val();
+  localStorage.setItem('machinery_id', id);
+  if(id == 3) window.location.href = "peralatan.html";
+  else window.location.href = "engine.html";
 }
