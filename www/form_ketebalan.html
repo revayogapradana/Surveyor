@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/form_ketebalan.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%" border="1">
+      <tr class="header">
+        <td align="left" width="33%"><a href="form_hull_item.html" title="Form Hull Item">Back</a></td>
+        <td align="center" width="34%">
+          Input Ketebalan
+        </td>
+        <td align="right" width="33%"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%">
+            <tr>
+              <td width="30%">
+                Titik: 
+              </td>
+              <td width="70%">
+                <input style="width: 10%;" type="number" id="valueKetebalan"> mm
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" class="fullwidth" value="Take Picture" onclick="takePictureCertificate()">
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Keterangan :
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <textarea style="width: 99%;" id="keterangan" class="fullwidth" placeholder="(Input manual dengan stylus pen)"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="submit" class="fullwidth" value="Submit" onclick="submitKetebalan()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    getHull();
+  </script>
+</html>

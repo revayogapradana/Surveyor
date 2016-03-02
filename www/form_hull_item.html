@@ -8,7 +8,7 @@
   <body>
     <table width="100%" height="100%" border="1">
       <tr class="header">
-        <td align="left" width="33%"><a href="cor.html" title="Certificates & Documents">Back</a></td>
+        <td align="left" width="33%"><a href="menu_hull_sub.html" title="Hull Sub Item">Back</a></td>
         <td align="center" width="34%">
           <div id="nama_hull_item">-</div>
         </td>
@@ -18,26 +18,25 @@
         <td colspan="3">
           <table width="100%">
             <tr>
-              <td colspan="2"></td>
+              <td width="50%">Kondisi :</td>
+              <td width="50%">
+                <input value="bantuan" type="submit" onclick="bantuan()">
+              </td>
             </tr>
             <tr>
-              <form id="ada_certificate">
-                <td width="50%"><input type="radio" name="adaCertificate" value="Ada" /> Ada</td>
-                <td width="50%"><input type="radio" name="adaCertificate" value="Tidak" /> Tidak</td>
-              </form>
-            </tr>
-            <tr>
-              <td colspan="2">Status :</td>
-            </tr>
-            <tr>
-              <form id="status_certificate">
-                <td width="50%"><input type="radio" name="statusCertificate" value="Berlaku" /> Berlaku</td>
-                <td width="50%"><input type="radio" name="statusCertificate" value="Kadaluarsa" /> Kadaluarsa</td>
+              <form id="kondisiForm">
+                <td width="50%"><input type="radio" name="kondisi" value="Good" /> Good</td>
+                <td width="50%"><input type="radio" name="kondisi" value="Repair/Maintenance" /> Repair/Maintenance</td>
               </form>
             </tr>
             <tr>
               <td colspan="2">
-                Masukkan Tanggal Berikut :
+                <i>(Apabila mengalami kerusakan, silahkan lengkapi bagian dibawah ini)</i>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Frame ke :
               </td>
             </tr>
             <tr>
@@ -45,26 +44,38 @@
                 <table width="100%">
                   <tr>
                     <td width="45%">
-                      <table width="100%">
-                        <tr>
-                          <td width="33%"><div id="tgl_start" class="fullwidth"></div></td>
-                          <td width="33%"><div id="bln_start" class="fullwidth"></div></td>
-                          <td width="33%"><div id="thn_start" class="fullwidth"></div></td>
-                        </tr>
-                      </table>
+                      <input type="number" class="fullwidth" id="frame_start">
                     </td>
                     <td width="10%" align="center">s/d</td>
                     <td width="45%">
-                      <table width="100%">
-                        <tr>
-                          <td width="33%"><div id="tgl_end" class="fullwidth"></div></td>
-                          <td width="33%"><div id="bln_end" class="fullwidth"></div></td>
-                          <td width="33%"><div id="thn_end" class="fullwidth"></div></td>
-                        </tr>
-                      </table>
-                    </td>
+                      <input type="number" class="fullwidth" id="frame_end">
                   </tr>
                 </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Lajur :
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <select id="value_lajur" class="fullwidth">
+                  <option value="K">K</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Keterangan / Catatan :
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <textarea id="keterangan" class="fullwidth" placeholder="(Input manual dengan stylus pen)"></textarea>
               </td>
             </tr>
           </table>
@@ -86,7 +97,7 @@
       </tr>
       <tr>
         <td colspan="3">
-          <input type="submit" class="fullwidth" value="Submit" onclick="submitCertificate()">
+          <input type="submit" class="fullwidth" value="Submit" onclick="submitHull()">
         </td>
       </tr>
     </table>
