@@ -48,7 +48,7 @@ function generateDate() {
   //alert(Number(new Date().getFullYear()));
   var thnNow = today.getFullYear();
   //alert(tglNow + ' ' + blnNow + ' ' + thnNow);
-  selbox = '<select class="fullwidth" id="thn_end_certificate">';
+  selbox = '<select class="fullwidth" id="thn_start_certificate">';
   for(var thn = thnNow; thn >= 2000; thn--) selbox += '<option value="' + thn + '">' + thn + '</option>';
   selbox += '</select>';
   $('#thn_start').html("");
@@ -74,4 +74,43 @@ function generateDate() {
   selbox += '</select>';
   $('#thn_end').html("");
   $(selbox).appendTo('#thn_end');
+}
+
+function submitCertificate() {
+  var kondisi = "";
+  kondisi = $("input[name='adaCertificate']:checked").val();
+  var status = "";
+  status = $("input[name='statusCertificate']:checked").val();
+  var date_start = "";
+  date_start = $('#bln_start_certificate').val() + '/' + $('#tgl_start_certificate').val() + '/' + $('#thn_start_certificate').val();
+  var date_end = "";
+  date_end = $('#bln_end_certificate').val() + '/' + $('#tgl_end_certificate').val() + '/' + $('#thn_end_certificate').val(); 
+
+  if(kondisi != "" && status != "" && date_start != "" && date_end != "") {
+    var dataToBeSent = {
+      'ada' : kondisi,
+      'status' : status,
+      'start_date' : date_start,
+      'end_date' : date_end,
+      'survey_date' : localStorage.getItem('date'),
+      'vessel_imo' : localStorage.getItem('id_kapal'),
+      'cer_id' : localStorage.getItem('id_certificate')
+    };
+    //alert(date_start + ' ' + date_end);
+    $.post(url + "/certificate", dataToBeSent, function(data, textStatus) {
+      if(data.message == 'failed'){
+        alert('Ada kesalahan data!');
+      } else {
+        //alert(data.result);
+        alert('data pengecekan berhasil terisi');
+        window.location.href = "formCertificate.html";
+      }
+    }, "json");
+  } else {
+    alert('Data harus terisi semua!');
+  }
+}
+
+function takePictureCertificate() {
+  // body...
 }
