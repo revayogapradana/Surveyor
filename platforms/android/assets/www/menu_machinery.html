@@ -2,29 +2,32 @@
 <html lang="en">
   <head>
     <script src="js/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="js/per_page/vessel_crew.js"></script>
+    <script type="text/javascript" src="js/per_page/menu_machinery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css" >
   </head>
   <body>
     <table width="100%" height="100%" border="1">
       <tr class="header">
-        <td align="left" width="33%"><a href="info_kapal.html" title="Tampilkan Data Kapal">Back</a></td>
-        <td align="center" width="34%">Input Data Survey</td>
+        <td align="left" width="33%"><a href="menu_hull.html" title="Hull">Back</a></td>
+        <td align="center" width="34%">Pilih Part di Machinery & Electrical yang ingin dicek</td>
         <td align="right" width="33%"><a href="#" onclick="logout()">Logout</a></td>
       </tr>
       <tr>
-        <td colspan="3">
-          <div id="vessel_crew" class="fullwidth"></div>
+        <td>
+          Machinery & Electrical :</div>
+        </td>
+        <td colspan="2">
+          <div id="list_item"></div>
         </td>
       </tr>
       <tr>
         <td colspan="3">
-          <input type="submit" class="fullwidth" value="Survey List" onclick="goToSurveyList()">
+          <input type="submit" class="fullwidth" value="Pilih" onclick="selectItem()">
         </td>
       </tr>
     </table>
   </body>
   <script type="text/javascript">
-    getVesselCrew();
+    getData();
   </script>
 </html>

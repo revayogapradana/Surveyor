@@ -20,22 +20,13 @@ function logout() {
   window.location.href = "index.html";
 }
 
-function goToCOR() {
-  window.location.href = "cor.html";
+function getDocument() {
+  var name = localStorage.getItem('name_document');
+  $('#name_doc').html(name);
+  //document.getElementById('name_cert').innerHTML = name;
+  //alert(name);
 }
 
-function goToHull() {
-  window.location.href = "menu_hull.html";
-}
-
-function goToMachinery() {
-  window.location.href = "menu_machinery.html";
-}
-
-function goToOutFitting() {
-  window.location.href = "menu_outfitting.html";
-}
-
-function goToNavigations() {
-  window.location.href = "menu_navigations.html";
+function takePicture() {
+  // body...
 }

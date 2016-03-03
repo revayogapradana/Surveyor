@@ -20,22 +20,13 @@ function logout() {
   window.location.href = "index.html";
 }
 
-function goToCOR() {
-  window.location.href = "cor.html";
+function getCertificate() {
+  var name = localStorage.getItem('name_certificate');
+  $('#name_cert').html(name);
+  //document.getElementById('name_cert').innerHTML = name;
+  //alert(name);
 }
 
-function goToHull() {
-  window.location.href = "menu_hull.html";
-}
-
-function goToMachinery() {
-  window.location.href = "menu_machinery.html";
-}
-
-function goToOutFitting() {
-  window.location.href = "menu_outfitting.html";
-}
-
-function goToNavigations() {
-  window.location.href = "menu_navigations.html";
+function goToFormCertificate() {
+  window.location.href = "formCertificate.html";
 }

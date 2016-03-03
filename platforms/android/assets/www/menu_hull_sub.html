@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/menu_hull_sub.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%" border="1">
+      <tr class="header">
+        <td align="left" width="33%"><a href="menu_hull.html" title="Hull">Back</a></td>
+        <td align="center" width="34%">Pilih Part di Hull yang ingin dicek</td>
+        <td align="right" width="33%"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%">
+            <tr>
+              <td>
+                <div id="nama_hull"></div>
+              </td>
+              <td colspan="3">
+                <div id="list_hull"></div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="submit" class="fullwidth" value="Pilih" onclick="selectHullItem()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    getHull();
+  </script>
+</html>

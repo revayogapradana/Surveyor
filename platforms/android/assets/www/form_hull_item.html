@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/form_hull_item.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%" border="1">
+      <tr class="header">
+        <td align="left" width="33%"><a href="menu_hull_sub.html" title="Hull Sub Item">Back</a></td>
+        <td align="center" width="34%">
+          <div id="nama_hull_item">-</div>
+        </td>
+        <td align="right" width="33%"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%">
+            <tr>
+              <td width="50%">Kondisi :</td>
+              <td width="50%">
+                <input value="bantuan" type="submit" onclick="bantuan()">
+              </td>
+            </tr>
+            <tr>
+              <form id="kondisiForm">
+                <td width="50%"><input type="radio" name="kondisi" value="Good" /> Good</td>
+                <td width="50%"><input type="radio" name="kondisi" value="Repair/Maintenance" /> Repair/Maintenance</td>
+              </form>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <i>(Apabila mengalami kerusakan, silahkan lengkapi bagian dibawah ini)</i>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Frame ke :
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table width="100%">
+                  <tr>
+                    <td width="45%">
+                      <input type="number" class="fullwidth" id="frame_start">
+                    </td>
+                    <td width="10%" align="center">s/d</td>
+                    <td width="45%">
+                      <input type="number" class="fullwidth" id="frame_end">
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Lajur :
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <select id="value_lajur" class="fullwidth">
+                  <option value="K">K</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                Keterangan / Catatan :
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <textarea id="keterangan" class="fullwidth" placeholder="(Input manual dengan stylus pen)"></textarea>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" class="fullwidth" value="Input Ketebalan" onclick="inputKetebalan()">
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" class="fullwidth" value="Take Picture" onclick="takePictureCertificate()">
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <input type="submit" class="fullwidth" value="Submit" onclick="submitHull()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    getHull();
+  </script>
+</html>
