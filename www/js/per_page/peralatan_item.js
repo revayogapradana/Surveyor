@@ -22,7 +22,7 @@ function logout() {
 
 function next(id) {
   localStorage.setItem('engine_id',id);
-  window.location.href = "engine_next.html";
+  window.location.href = "form_engine_next.html";
 }
 
 function getList() {

@@ -50,6 +50,6 @@ function getData() {
 function selectItem() {
   var id = $('#item_id').val();
   localStorage.setItem('machinery_id', id);
-  if(id == 3) window.location.href = "peralatan.html";
+  if(id == 3) window.location.href = "peralatan_item.html";
   else window.location.href = "engine.html";
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/per_page/form_bahan_next.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+  </head>
+  <body>
+    <table width="100%" height="100%" border="1">
+      <tr class="header">
+        <td align="left" width="33%"><a href="engine_next.html" title="Engine Item">Back</a></td>
+        <td align="center" width="34%"><div id="nama_engine_item"></div></td>
+        <td align="right" width="33%"><a href="#" onclick="logout()">Logout</a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div id="list_item"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <i><font color="white">s</font></i>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <table width="100%">
+            <tr>
+              <td colspan="2">Kondisi</td>
+            </tr>
+            <tr>
+              <form id="formKondisi">
+                <td width="50%" align="right"><input type="radio" name="kondisi" value="Good" /> Good</td>
+                <td width="50%"><input type="radio" name="kondisi" value="Repair/Maintenance" /> Repair/Maintenance</td>
+              </form>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" class="fullwidth" value="Take Picture" onclick="takePicture()">
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">Keterangan / Catatan :</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <textarea id="keterangan" class="fullwidth" placeholder="(Input manual dengan stylus pen)"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" class="fullwidth" value="Submit" onclick="selectItem()">
+        </td>
+        <td>
+          <input type="submit" class="fullwidth" value="Bantuan" onclick="bantuan()">
+        </td>
+        <td>
+          <input type="submit" class="fullwidth" value="Survey List" onclick="goToSurveyList()">
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script type="text/javascript">
+    getData();
+  </script>
+</html>
