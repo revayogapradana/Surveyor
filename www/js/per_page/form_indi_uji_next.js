@@ -21,6 +21,7 @@ function logout() {
 }
 
 function getData() {
+  $('#nama_engine_item').html(localStorage.getItem('nama_label_engine'));
   var machinery_id = localStorage.getItem('machinery_id');
   var engine_id = localStorage.getItem('engine_id');
   var label_id = localStorage.getItem('label_id')-8;
@@ -30,8 +31,7 @@ function getData() {
   $.getJSON( url + "/machine/engine/sub/" + machinery_id + '/' + engine_id + '/' + label_id, {} ).done( function( res ) {
     //alert(result.result);
     $.each( res.result, function(i, item) {
-      if(count == 0) $('#nama_engine_item').html(item);
-      else if(count > 4){
+      if(count > 4){
         selbox += '<tr><td width="50%">' + i + '</td><td width="50%">: ' + item + '</td></tr>';
       }
       count++;

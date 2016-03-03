@@ -86,6 +86,8 @@ var engine_id = localStorage.getItem('engine_id');
 function selectItem() {
   var label_id = $('#label_id').val();
   localStorage.setItem('label_id', label_id);
+  var nama = $("#label_id option[value='" + label_id + "']").text();
+  localStorage.setItem('nama_label_engine',nama);
   var id = localStorage.getItem('engine_id');
   if(id == 1 || id == 2 || id == 4) window.location.href = "form_engine_next.html";
   else if(id == 3) window.location.href = "form_bahan_next.html";

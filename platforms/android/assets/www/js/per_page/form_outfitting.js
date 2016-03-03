@@ -21,24 +21,38 @@ function logout() {
 }
 
 function getData() {
-  $('#nama_engine_item').html(localStorage.getItem('nama_label_engine'));
-  var machinery_id = localStorage.getItem('machinery_id');
-  var engine_id = localStorage.getItem('engine_id');
-  var label_id = localStorage.getItem('label_id')-8;
+  var outfitting_id = localStorage.getItem('outfitting_id');
+
+  $('#nama').html(localStorage.getItem('outfitting_nama'));
 
   var selbox = '<table width="100%">';
-  var count = 0;
-  $.getJSON( url + "/machine/engine/sub/" + machinery_id + '/' + engine_id + '/' + label_id, {} ).done( function( res ) {
-    //alert(result.result);
-    $.each( res.result, function(i, item) {
-      if(count > 4){
-        selbox += '<tr><td width="50%">' + i + '</td><td width="50%">: ' + item + '</td></tr>';
+
+  $.getJSON( url + "/outfitting/" + outfitting_id, {} ).done( function( res ) {
+      if(res.message == 'success'){
+        //alert(result.result);
+        $.each( res.result, function( i, item ) {
+          var count = 1;
+          var atribut;
+          var nama;
+          $.each( this, function( j, item2 ) {
+            if(count == 1)
+              atribut = item2;
+            else if(count == 2)
+              nama = item2;
+            count++;
+            //alert(selbox);
+          } );
+          selbox += '<tr><td width="50%">' + atribut + '</td><td width="50%">' + nama + '</td></tr>';
+        } );
       }
-      count++;
-    } );
-    selbox += '</table>';
-    $('#list_item').html(selbox);
+      else {
+        alert('data belum diinput di web!');
+      }
   });
+  selbox += '</table>';
+  //alert(selbox);
+  $('#list').html("");
+  $(selbox).appendTo('#list');
 }
 
 function selectItem() {
@@ -75,5 +89,5 @@ function bantuan() {
 }
 
 function goToSurveyList() {
-  window.location.href = "survey_list";
+  window.location.href = "survey_list.html";
 }
